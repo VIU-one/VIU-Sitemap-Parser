@@ -15,7 +15,6 @@ The result contains all information we found (e.g. HREF Lang etc.) They are not 
 ```pip install viusitemapparser```
 
 **Usage - single files**
-
 ```
 from viusitemapparser.vsp import get_sitemap_contents
 
