@@ -12,7 +12,7 @@ The result contains all information we found (e.g. HREF Lang etc.) They are not 
 
 **Installation**
 
-`pip install viu-sitemap-parser`
+`pip install viusitemapparser`
 
 **Usage - single files**
 ```
