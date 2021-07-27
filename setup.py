@@ -9,7 +9,7 @@ if not version:
 setup(
     name='VIU Sitemap parser',
     version=version,
-    packages=['viu-sitemap-parser'],
+    packages=['viusitemapparser'],
     license='MIT',
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown"
