@@ -30,7 +30,8 @@ jobs:
       - name: Test with pytest
         run: |
           pytest
- build-n-publish:
+
+  build-n-publish:
     name: Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
     runs-on: ubuntu-18.04
     steps:
