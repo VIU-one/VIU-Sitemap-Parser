@@ -61,6 +61,11 @@ jobs:
           --wheel
           --outdir dist/
           .
+      - name: export release number
+        run: >-
+          if [ -z ${github.event.release.tag_name+x} ]; export RELEASE_NUMBER=${{ github.event.release.tag_name }}; export RELEASE_NUMBER=${{ github.run_id }}; fi
+          echo ${{ RELEASE_NUMBER }}
+
 
       - name: Publish distribution 📦 to Test PyPI
         uses: pypa/gh-action-pypi-publish@master
