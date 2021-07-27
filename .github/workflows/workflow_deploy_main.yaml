@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - main
+  page_build:
+    release:
+      types: # This configuration does not affect the page_build event above
+        - created
 
 jobs:
   build:
