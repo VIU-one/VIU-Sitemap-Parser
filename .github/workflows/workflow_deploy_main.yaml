@@ -40,6 +40,9 @@ jobs:
   build-n-publish:
     name: Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
     runs-on: ubuntu-18.04
+    env:
+      RELEASE_NUMBER: ${{ github.event.release.tag_name }}
+      RUN_ID: ${{ github.run_id }}
     steps:
       - uses: actions/checkout@master
       - name: Set up Python 3.7
@@ -61,10 +64,6 @@ jobs:
           --wheel
           --outdir dist/
           .
-      - env:
-          RELEASE_NUMBER: ${{ github.event.release.tag_name }}
-      - env:
-          RUN_ID: ${{ github.run_id }}
       - name: Publish distribution 📦 to Test PyPI
         uses: pypa/gh-action-pypi-publish@master
         with:
