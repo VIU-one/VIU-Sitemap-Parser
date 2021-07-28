@@ -1,5 +1,5 @@
 ![example workflow](https://github.com/VIU-one/VIU-Sitemap-Parser/actions/workflows/workflow_deploy_main.yaml/badge.svg)
-
+[![codecov](https://codecov.io/gh/VIU-one/VIU-Sitemap-Parser/branch/main/graph/badge.svg?token=ALXIxDH3q7)](https://codecov.io/gh/VIU-one/VIU-Sitemap-Parser)
 
 # VIU-Sitemap-Parser
 Parse XML/Plaintext/RSS Sitemaps
