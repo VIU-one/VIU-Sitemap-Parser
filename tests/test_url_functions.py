@@ -11,3 +11,4 @@ def test_url_functions():
     assert check_if_url('/folder') is False
     assert check_if_url('/folder/folder') is False
     assert check_if_url('/folder/folder/folder') is False
+    assert check_if_url(None) is False
