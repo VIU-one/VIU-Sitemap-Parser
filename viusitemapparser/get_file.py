@@ -1,4 +1,4 @@
-from .objects.sitemap_file import SitemapFile
+from viusitemapparser.objects.sitemap_file import SitemapFile
 import logging
 from viusitemapparser.url_functions import check_if_url
 import requests
