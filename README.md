@@ -1,3 +1,6 @@
+![example workflow](https://github.com/VIU-one/VIU-Sitemap-Parser/workflows/workflow_deploy_main.yaml/badge.svg)
+
+
 # VIU-Sitemap-Parser
 Parse XML/Plaintext/RSS Sitemaps
 
