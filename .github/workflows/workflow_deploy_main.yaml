@@ -1,4 +1,4 @@
-name: Python package
+name: Deploy main
 on:
   push:
     branches:
