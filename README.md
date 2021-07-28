@@ -58,6 +58,7 @@ for entry in sitemap_entries:
         print(entry)
 ```
 
+Take a look on https://github.com/VIU-one/VIU-Sitemap-Parser/blob/main/tests/test_sitemap_entries.py to see how the response of different formats looks.
 
 **Usage - with iterator over sitemap_index files**
 
@@ -75,5 +76,10 @@ https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap?hl=de
 
 https://developers.google.com/search/blog/2014/10/best-practices-for-xml-sitemaps-rssatom
 
-HREF Lang in Sitemaps: https://developers.google.com/search/docs/advanced/crawling/localized-versions?hl=de#sitemap
+Video in Sitemaps: https://developers.google.com/search/docs/advanced/sitemaps/video-sitemaps
 
+Images in Sitemaps: https://developers.google.com/search/docs/advanced/sitemaps/image-sitemaps
+
+HREF Lang in Sitemaps: https://developers.google.com/search/docs/advanced/crawling/localized-versions#sitemap
+
+Google News Sitemaps: https://developers.google.com/search/docs/advanced/sitemaps/news-sitemap?hl=de

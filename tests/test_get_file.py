@@ -32,7 +32,7 @@ def test_get_file():
     res = get_file(xml_sitemap_200)
 
     res_dict = res.get_file_status_as_dict()
-    print(res_dict)
+
     assert res.sitemap_file_error is None
     assert res.sitemap_received is True
     assert res_dict.get("source_type") == 'remote'

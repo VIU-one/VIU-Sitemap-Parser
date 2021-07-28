@@ -1,10 +1,12 @@
 from collections import defaultdict
 from viusitemapparser.url_functions import check_if_url
 
+
 def etree_to_dict(t):
     prefix, has_namespace, postfix = t.tag.partition('}')
     if has_namespace:
         t.tag = postfix  # strip all namespaces
+    t.tag = t.tag.lower()
     d = {t.tag: {} if t.attrib else None}
     children = list(t)
 
@@ -44,7 +46,7 @@ def entries(sitemap, only_relevant_rss_fields=False, only_relevant_atom_fields=F
                 if item and row_res:
                     if only_relevant_rss_fields:
                         yield {'link': row_res.get('link'),
-                               'pubDate': row_res.get('pubDate')}
+                               'pubdate': row_res.get('pubdate')}
                     else:
                         yield row_res
 
