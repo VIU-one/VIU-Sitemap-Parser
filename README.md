@@ -22,6 +22,9 @@ The result contains all information we found (e.g. HREF Lang etc.) They are not 
 from viusitemapparser.vsp import get_sitemap_contents
 
 sitemap, sitemap_entries = get_sitemap_contents('https://run.mocky.io/v3/d8cb86d5-0400-4860-a053-78996f9ee6b2')
+
+Add Headers (optional):
+sitemap, sitemap_entries = get_sitemap_contents('https://run.mocky.io/v3/d8cb86d5-0400-4860-a053-78996f9ee6b2', headers={'User-Agent': 'Mozilla/5.0'})
 ```
 
 

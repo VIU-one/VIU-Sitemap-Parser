@@ -5,13 +5,13 @@ import requests
 import os.path
 
 
-def get_file(filename):
+def get_file(filename, headers):
     result_file = SitemapFile(filename)
 
     try:
         # If remote file: use requests
         if check_if_url(filename):
-            result = requests.get(filename)
+            result = requests.get(filename, headers=headers)
             if 200 >= result.status_code < 300:
                 result_file.set_remote_file_from_requests(result)
             else:
