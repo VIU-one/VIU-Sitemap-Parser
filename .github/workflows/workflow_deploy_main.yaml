@@ -42,6 +42,7 @@ jobs:
           name: codecov-umbrella  # optional
           fail_ci_if_error: true  # optional (default = false)
           verbose: true           # optional (default = false)
+          files: ./coverage.xml   # optional
 
   build-n-publish:
     name: Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
