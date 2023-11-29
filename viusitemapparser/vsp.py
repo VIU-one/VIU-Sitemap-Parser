@@ -4,7 +4,7 @@ from viusitemapparser.get_file import get_file
 from viusitemapparser.get_sitemap_entries import entries
 
 
-def process_sitemap(filename, headers):
+def process_sitemap(filename, headers=None):
     sitemap = get_file(filename, headers=headers)
     lxml_obj = parse_file(sitemap.get_content())
     if lxml_obj:

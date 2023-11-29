@@ -5,7 +5,7 @@ import requests
 import os.path
 
 
-def get_file(filename, headers):
+def get_file(filename, headers=None):
     result_file = SitemapFile(filename)
 
     try:
