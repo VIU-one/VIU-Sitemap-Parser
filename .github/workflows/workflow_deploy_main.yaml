@@ -46,7 +46,7 @@ jobs:
 
   build-n-publish:
     name: Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     env:
       RELEASE_NUMBER: ${{ github.event.release.tag_name }}
       RUN_ID: ${{ github.run_id }}
