@@ -7,7 +7,7 @@ if not version:
     version = os.environ.get('RUN_ID', '0.1')
 
 setup(
-    name='VIU Sitemap parser',
+    name='viu_sitemap_parser',
     version=version,
     packages=['viusitemapparser'],
     license='MIT',
