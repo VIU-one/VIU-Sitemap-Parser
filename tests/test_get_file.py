@@ -2,13 +2,13 @@ from viusitemapparser.get_file import get_file
 
 # Testurls viu mock.io
 # 200 XML Sitemap
-xml_sitemap_200 = 'https://run.mocky.io/v3/d8cb86d5-0400-4860-a053-78996f9ee6b2'
+xml_sitemap_200 = 'https://viusitemaps.free.beeceptor.com/page_200'
 
 # 404
-xml_sitemap_404 = 'https://run.mocky.io/v3/90bf8eb6-d773-437d-80b1-205bc2987cf8'
+xml_sitemap_404 = 'https://viusitemaps.free.beeceptor.com/page_404'
 
 # 501
-xml_sitemap_501 = 'https://run.mocky.io/v3/6618a888-2834-4621-bec5-5830d82b008d'
+xml_sitemap_501 = 'https://viusitemaps.free.beeceptor.com/page_501'
 
 # DNS Error
 xml_sitemap_dns_error = 'http://adsljashlsadkjdsalkjdsalaskdjaslkdjaslkdj.de'
