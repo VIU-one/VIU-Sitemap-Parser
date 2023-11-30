@@ -71,6 +71,10 @@ jobs:
           --wheel
           --outdir dist/
           .
+      - name: show files in dist/
+        run: ls -l dist/
+      - name: show files
+        run: ls -l
       - name: Publish distribution 📦 to Test PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
