@@ -5,13 +5,16 @@ import requests
 import os.path
 
 
-def get_file(filename, headers=None):
+def get_file(filename, headers=None, proxy=None):
     result_file = SitemapFile(filename)
-
+    proxies = { 
+              "http"  : proxy, 
+              "https" : proxy
+            }
     try:
         # If remote file: use requests
         if check_if_url(filename):
-            result = requests.get(filename, headers=headers)
+            result = requests.get(filename, headers=headers, proxies=proxies)
             if 200 >= result.status_code < 300:
                 result_file.set_remote_file_from_requests(result)
             else:
