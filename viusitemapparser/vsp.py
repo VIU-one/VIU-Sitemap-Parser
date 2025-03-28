@@ -18,8 +18,8 @@ def process_sitemap(filename, headers=None):
     return sitemap
 
 
-def get_sitemap_contents(filename, only_relevant_rss_fields=False, only_relevant_atom_fields=False, headers=None):
-    sitemap = process_sitemap(filename, headers)
+def get_sitemap_contents(filename, only_relevant_rss_fields=False, only_relevant_atom_fields=False, headers=None, proxy=None):
+    sitemap = process_sitemap(filename, headers, proxy)
     sitemap_entries = entries(sitemap, only_relevant_rss_fields=only_relevant_rss_fields,
                               only_relevant_atom_fields=only_relevant_atom_fields)
     return sitemap.get_file_status_as_dict(), sitemap_entries
