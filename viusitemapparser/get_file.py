@@ -32,5 +32,7 @@ def get_file(filename, headers=None, proxy=None):
         error_message = f"Unable to receive file: {e}"
         logging.error(error_message)
         result_file.error_receiving_file(error_message)
+        result_file.sitemap_received = False
+        return result_file
 
     return result_file

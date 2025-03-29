@@ -41,6 +41,11 @@ def test_get_file():
     res = get_file(xml_sitemap_404)
 
     res_dict = res.get_file_status_as_dict()
+    sfe = res.sitemap_file_error
+    print("###")
+    print(sfe)
+    print("###")
+
     assert res.sitemap_file_error is not None
     assert res.sitemap_received is False
     assert res_dict.get("source_type") == 'remote'
@@ -49,6 +54,11 @@ def test_get_file():
     res = get_file(xml_sitemap_501)
 
     res_dict = res.get_file_status_as_dict()
+
+    print("###")
+    print(res.sitemap_file_error)
+    print("###")
+
     assert res.sitemap_file_error is not None
     assert res.sitemap_received is False
     assert res_dict.get("source_type") == 'remote'
