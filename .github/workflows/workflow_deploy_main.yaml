@@ -44,6 +44,9 @@ jobs:
   build-n-publish:
     name: Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     env:
       RELEASE_NUMBER: ${{ github.event.release.tag_name }}
       RUN_ID: ${{ github.run_id }}
@@ -80,5 +83,6 @@ jobs:
       - name: Publish distribution 📦 to PyPI
         if: startsWith(github.ref, 'refs/tags')
         uses: pypa/gh-action-pypi-publish@release/v1
+
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
