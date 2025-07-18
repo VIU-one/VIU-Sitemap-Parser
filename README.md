@@ -13,6 +13,12 @@ It's not a big project - so we try to leave the code as simple as possible.
 
 The result contains all information we found (e.g. HREF Lang etc.) They are not normalized and for each sitemap format different. See examples.
 
+**Features**
+- Supports XML sitemaps, sitemap index files, RSS feeds, Atom feeds, and plain text sitemaps
+- Automatically detects and decompresses gzipped sitemaps (.gz files)
+- Handles both local files and remote URLs
+- Preserves all metadata from sitemap entries
+
 **Installation**
 
 ```pip install VIU-Sitemap-parser```
@@ -25,6 +31,10 @@ sitemap, sitemap_entries = get_sitemap_contents('https://run.mocky.io/v3/d8cb86d
 
 Add Headers (optional):
 sitemap, sitemap_entries = get_sitemap_contents('https://run.mocky.io/v3/d8cb86d5-0400-4860-a053-78996f9ee6b2', headers={'User-Agent': 'Mozilla/5.0'})
+
+# Gzipped sitemaps are automatically supported
+sitemap, sitemap_entries = get_sitemap_contents('https://example.com/sitemap.xml.gz')
+sitemap, sitemap_entries = get_sitemap_contents('local_sitemap.xml.gz')
 ```
 
 

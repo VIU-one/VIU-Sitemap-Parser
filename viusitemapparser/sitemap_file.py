@@ -21,6 +21,13 @@ class SitemapFile:
         self.sitemap_contents = result.text
         self.sitemap_headers = result.headers
 
+    def set_remote_file_content(self, content, headers):
+        """Set remote file content directly (used for gzipped content)"""
+        self.sitemap_source_type = 'remote'
+        self.sitemap_received = True
+        self.sitemap_contents = content
+        self.sitemap_headers = headers
+
     def set_local_file(self, file_contents):
         self.sitemap_source_type = 'local'
         self.sitemap_received = True

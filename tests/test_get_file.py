@@ -19,6 +19,9 @@ xml_sitemap_local_file_exists = 'tests/sitemap_types/xml_sitemap.xml'
 # local file exists not
 xml_sitemap_local_file_exists_not = 'tests/sitemap_types/no_xml_sitemap.xml'
 
+# gzipped local file exists
+xml_sitemap_gzipped_local_file_exists = 'tests/sitemap_types/xml_sitemap.xml.gz'
+
 # Todo: 302 to xml sitemaps
 
 # Todo: 302 to 404
@@ -82,4 +85,12 @@ def test_get_file():
 
     assert res.sitemap_file_error is not None
     assert res.sitemap_received is False
+
+    # Test gzipped local file
+    res = get_file(xml_sitemap_gzipped_local_file_exists)
+
+    assert res.sitemap_file_error is None
+    assert res.sitemap_received is True
+    assert res.get_content() is not None
+    assert len(res.get_content()) > 0
 
