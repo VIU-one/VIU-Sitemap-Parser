@@ -21,6 +21,9 @@ def _decompress_gzip(content_bytes):
     try:
         decompressed = gzip.decompress(content_bytes)
         return decompressed.decode('utf-8')
+    except gzip.BadGzipFile as e:
+        logging.error(f"Invalid gzip file format: {e}")
+        return None
     except Exception as e:
         logging.error(f"Error decompressing gzip content: {e}")
         return None
@@ -37,11 +40,11 @@ def get_file(filename, headers=None, proxy=None):
         if check_if_url(filename):
             result = requests.get(filename, headers=headers, proxies=proxies)
             if 200 <= result.status_code < 300:
-                # Check if content is gzipped
-                content_encoding = result.headers.get('content-encoding', '').lower()
-                is_gzipped = content_encoding == 'gzip' or _is_gzipped_url(filename) or _is_gzipped_content(result.content)
+                # Check if content is a gzipped file (not server compression)
+                # Note: requests automatically handles Content-Encoding: gzip, so we don't need to check that
+                is_gzipped_file = _is_gzipped_url(filename) or _is_gzipped_content(result.content)
 
-                if is_gzipped:
+                if is_gzipped_file:
                     # Handle gzipped content
                     decompressed_content = _decompress_gzip(result.content)
                     if decompressed_content is not None:

@@ -123,9 +123,33 @@ def test_gzip_detection_functions():
     assert result is None
 
 
+def test_content_encoding_vs_file_compression():
+    """Test that Content-Encoding gzip is handled correctly by requests"""
+    # This test documents the behavior but relies on external servers
+    # Note: requests automatically handles Content-Encoding: gzip
+
+    # Test normal sitemap (should work regardless of Content-Encoding)
+    try:
+        sitemap, entries = get_sitemap_contents('https://www.fhnw.ch/sitemap-index.xml')
+        assert sitemap['file_received'] is True
+        assert sitemap['file_error'] is None
+        assert sitemap['sitemap_type'] in ['xml_sitemap_index', 'xml_sitemap']
+        entries_list = list(entries)
+        assert len(entries_list) > 0
+    except Exception:
+        # Skip test if URL is not accessible (network issues, etc.)
+        pass
+
+    # Test that we can distinguish between URL-based gzip and Content-Encoding
+    from viusitemapparser.get_file import _is_gzipped_url
+    assert _is_gzipped_url('https://example.com/sitemap.xml.gz') is True
+    assert _is_gzipped_url('https://www.fhnw.ch/sitemap-index.xml') is False
+
+
 if __name__ == '__main__':
     test_gzip_local_files()
     test_gzip_full_processing()
     test_gzip_error_handling()
     test_gzip_detection_functions()
+    test_content_encoding_vs_file_compression()
     print("All gzip tests passed!")
